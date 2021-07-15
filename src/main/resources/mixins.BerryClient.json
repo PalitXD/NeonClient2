@@ -5,6 +5,8 @@
   "refmap": "mixins.BerryClient.refmap.json",
   "verbose": true,
   "mixins": [
-    "MixinMainMenu"
+    "MixinMainMenu",
+    "MixinAbstractClientPlayer",
+    "SessionUtil"
     ]
 }

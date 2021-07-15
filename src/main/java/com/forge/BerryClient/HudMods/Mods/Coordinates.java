@@ -12,16 +12,16 @@ import java.awt.*;
 
 public class Coordinates extends HudMod {
     public Coordinates() {
-        super("Coordinates", 10, 10,  40, 90);
+        super("Coordinates", 10, 10,  40, 50);
     }
 
 
     @Override
     public void Render(){
         Gui.drawRect(x,y, getWidth(), getHeight(), Color);
-        fr.drawString("X: " + (int) mc.thePlayer.posX, x + 2, y+5, 1);
-        fr.drawString("Y: " + (int) mc.thePlayer.posY, x + 2, y + 15, 1);
-        fr.drawString("Z: " + (int) mc.thePlayer.posZ, x + 2, y + 25, 1);
+        fr.drawString("X: " + (int) mc.thePlayer.posX, x + 2, y+5, java.awt.Color.white.getRGB());
+        fr.drawString("Y: " + (int) mc.thePlayer.posY, x + 2, y + 15, java.awt.Color.white.getRGB());
+        fr.drawString("Z: " + (int) mc.thePlayer.posZ, x + 2, y + 25, java.awt.Color.white.getRGB());
 
 
     }

@@ -31,7 +31,7 @@ public class HudMod {
         this.y = y;
         this.Width = width;
         this.Height = height;
-        this.Color = 0x50000000;
+        this.Color = 0x30000000;
         this.Toggled = true;
         this.Dragged = false;
     }

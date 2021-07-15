@@ -27,8 +27,8 @@ apply plugin: 'org.spongepowered.mixin'
 
 
 version = "1.0"
-group = "dev.leap.frog"
-archivesBaseName = "LeapFrog"
+group = "com.forge.BerryClient"
+archivesBaseName = "BerryClientBeta"
 
 sourceCompatibility = targetCompatibility = '1.8'
 compileJava {
@@ -53,13 +53,12 @@ repositories {
 minecraft {
     version = "1.8.9-11.15.1.2318-1.8.9"
     runDir = "run"
-    coreMod = "com.forge.BerryClient.Mixins.MixinsLoader"
     mappings = "stable_20"
 }
 
 mixin {
     defaultObfuscationEnv searge
-    add sourceSets.main, 'mixins.snowwy.refmap.json'
+    add sourceSets.main, 'mixins.BerryClient.refmap.json'
 }
 dependencies {
 
@@ -71,11 +70,12 @@ dependencies {
         exclude module: 'commons-io'
     }
 
-    compile "com.github.biggiemedium:Alpine:1.9"
     compile 'club.minnced:java-discord-rpc:2.0.2'
     compile group: 'net.jodah', name: 'typetools', version: '0.5.0'
 
 }
+
+
 
 processResources {
 
