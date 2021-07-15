@@ -14,7 +14,9 @@ public class HudRender extends Gui {
     public void Render(RenderGameOverlayEvent event){
         if(event.type == RenderGameOverlayEvent.ElementType.TEXT) {
             for (HudMod m : HudManager.Hud) {
-                m.Render();
+                if(m.Toggled == true) {
+                    m.Render();
+                }
             }
         }
     }
