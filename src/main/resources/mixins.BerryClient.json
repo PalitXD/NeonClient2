@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "com.forge.BerryClient.Mixins",
+  "refmap": "mixins.BerryClient.refmap.json",
+  "verbose": true,
+  "mixins": [
+    "MixinMainMenu"
+    ]
+}
