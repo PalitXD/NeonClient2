@@ -1,5 +1,7 @@
 package com.forge.BerryClient.Util;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.util.MathHelper;
 
 public class MathUtil {
@@ -44,4 +46,30 @@ public class MathUtil {
     public static float denormalizeValue(float value, float valueMin, float valueMax, float valueStep) {
         return snapToStepClamp(valueMin + (valueMax - valueMin) * MathHelper.clamp_float(value, 0.0F, 1.0F), valueMin, valueMax, valueStep);
     }
+
+    public static int GetCenteredPositionX(){
+        ScaledResolution sr = new ScaledResolution(Minecraft.getMinecraft());
+        int x;
+        x = sr.getScaledWidth()/2;
+        return(x);
+    }
+    public static int GetCenteredPositionY(){
+        ScaledResolution sr = new ScaledResolution(Minecraft.getMinecraft());
+        int y;
+        y = sr.getScaledHeight()/2;
+        return (y);
+    }
+    public static float getscalledposX(int pos){
+        ScaledResolution sr = new ScaledResolution(Minecraft.getMinecraft());
+        float pos1 = (float) sr.getScaledWidth_double()/1920;
+        float pos2 = pos1 * pos;
+        return pos2;
+    }
+    public static float getscalledposY(int pos){
+        ScaledResolution sr = new ScaledResolution(Minecraft.getMinecraft());
+        float pos1 = (float) sr.getScaledHeight_double()/1080;
+        float pos2 = pos1 * pos;
+        return pos2;
+    }
 }
+

@@ -7,6 +7,7 @@ import com.forge.BerryClient.Managers.ModuleManager;
 import com.forge.BerryClient.Mods.Module;
 import com.forge.BerryClient.Util.Helper;
 import com.forge.BerryClient.Util.SessionChanger;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
