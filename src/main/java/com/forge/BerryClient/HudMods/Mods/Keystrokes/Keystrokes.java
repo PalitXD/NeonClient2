@@ -2,6 +2,7 @@ package com.forge.BerryClient.HudMods.Mods.Keystrokes;
 
 import com.forge.BerryClient.HudMods.HudMod;
 import com.forge.BerryClient.Util.ColorUtil;
+import com.forge.BerryClient.Util.DrawUtil;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.settings.KeyBinding;
 
@@ -14,7 +15,7 @@ public class Keystrokes extends HudMod {
 
 
     public Keystrokes() {
-        super("Keystrokes", 90, 120, 70, 45);
+        super("Keystrokes", 95, 125, 70, 45);
         keys.add(new Key("W",  25, 0, mc.gameSettings.keyBindForward));
         keys.add(new Key("A", 0,  25, mc.gameSettings.keyBindLeft));
         keys.add(new Key("S", 25, 25, mc.gameSettings.keyBindBack));
@@ -57,7 +58,7 @@ public class Keystrokes extends HudMod {
     public void Render(){
         for(Key k : keys){
             Gui.drawRect( getX() + k.getX(), getY() + k.getY(), getX() + k.getX() + 20, getY() + k.getY() + 20, k.iskeydown() ? 0x30000000 : 0);
-            fr.drawString(k.getName(),  getX()+ k.getX() + 5, getY() + k.getY() + 5, k.iskeydown() ? java.awt.Color.red.getRGB() : java.awt.Color.red.getRGB());
+            fr.drawString(k.getName(),  getX()+ k.getX() + 7, getY() + k.getY() + 7, k.iskeydown() ? java.awt.Color.red.getRGB() : java.awt.Color.red.getRGB());
         }
     }
 }

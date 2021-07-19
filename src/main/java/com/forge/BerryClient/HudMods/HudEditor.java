@@ -6,6 +6,7 @@ import com.forge.BerryClient.Managers.HudManager;
 import com.forge.BerryClient.Util.DrawUtil;
 import com.forge.BerryClient.Util.MathUtil;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
 
@@ -13,14 +14,19 @@ import java.io.IOException;
 
 public class HudEditor extends GuiScreen {
 
-
+public int plusX;
+public int plusY;
 
     @Override
     public void drawScreen(int mx, int my, float tick){
         for (HudMod m : HudManager.Hud) {
+            Gui.drawRect(m.getX(), m.getY(), m.getWidth(), m.getHeight(), 0x26666666);
+            if(m.Dragged || mx >= m.getX() && mx <= m.getWidth() && my >= m.getY() && my <= m.getHeight()){
+                Gui.drawRect(m.getX(), m.getY(), m.getWidth(), m.getHeight(), 0x29999999);
+            }
             if(m.Dragged == true){
-                m.setX(mx);
-                m.setY(my);
+                m.setX(mx - plusX);
+                m.setY(my - plusY);
             }
         }
         super.drawScreen(mx, my, tick);
@@ -45,6 +51,8 @@ public class HudEditor extends GuiScreen {
             if(mouseX >= m.getX() && mouseX <= m.getWidth() && mouseY >= m.getY() && mouseY <= m.getHeight()){
 
                 if(mouseButton ==0) {
+                    plusX = (mouseX - m.getX());
+                    plusY = (mouseY - m.getY());
                     m.setDragged(true);
                 }
             }
