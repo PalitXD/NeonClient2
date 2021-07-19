@@ -56,8 +56,8 @@ public class Keystrokes extends HudMod {
     @Override
     public void Render(){
         for(Key k : keys){
-            Gui.drawRect( getX() + k.getX(), getY() + k.getY(), getX() + k.getX() + 20, getY() + k.getY() + 20, k.iskeydown() ? 0x30000009 : 0x40000000);
-            fr.drawString(k.getName(),  getX()+ k.getX() + 5, getY() + k.getY() + 5, k.iskeydown() ? java.awt.Color.white.getRGB() : java.awt.Color.white.getRGB());
+            Gui.drawRect( getX() + k.getX(), getY() + k.getY(), getX() + k.getX() + 20, getY() + k.getY() + 20, k.iskeydown() ? 0x30000000 : 0);
+            fr.drawString(k.getName(),  getX()+ k.getX() + 5, getY() + k.getY() + 5, k.iskeydown() ? java.awt.Color.red.getRGB() : java.awt.Color.red.getRGB());
         }
     }
 }

@@ -15,6 +15,6 @@ public class FPS extends HudMod {
     @Override
     public void Render(){
         Gui.drawRect(x,y, getWidth(), getHeight(), Color);
-        fr.drawString("FPS " + String.valueOf(Minecraft.getDebugFPS()), getX(), getY(), java.awt.Color.white.getRGB());
+        fr.drawString("FPS " + String.valueOf(Minecraft.getDebugFPS()), getX(), getY(), java.awt.Color.red.getRGB());
     }
 }

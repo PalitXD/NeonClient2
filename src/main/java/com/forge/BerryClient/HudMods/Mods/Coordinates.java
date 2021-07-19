@@ -19,9 +19,9 @@ public class Coordinates extends HudMod {
     @Override
     public void Render(){
         Gui.drawRect(x,y, getWidth(), getHeight(), Color);
-        fr.drawString("X: " + (int) mc.thePlayer.posX, x + 2, y+5, java.awt.Color.white.getRGB());
-        fr.drawString("Y: " + (int) mc.thePlayer.posY, x + 2, y + 15, java.awt.Color.white.getRGB());
-        fr.drawString("Z: " + (int) mc.thePlayer.posZ, x + 2, y + 25, java.awt.Color.white.getRGB());
+        fr.drawString("X: " + (int) mc.thePlayer.posX, x + 2, y+5, java.awt.Color.red.getRGB());
+        fr.drawString("Y: " + (int) mc.thePlayer.posY, x + 2, y + 15, java.awt.Color.red.getRGB());
+        fr.drawString("Z: " + (int) mc.thePlayer.posZ, x + 2, y + 25, java.awt.Color.red.getRGB());
 
 
     }
