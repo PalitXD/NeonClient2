@@ -46,7 +46,7 @@ public class Main
         MinecraftForge.EVENT_BUS.register(moduleManager);
         MinecraftForge.EVENT_BUS.register(hudManager);
         MinecraftForge.EVENT_BUS.register(hudRender);
-        SessionChanger.getInstance().setUser("halop56yt@gmail.com", "bhfwb*^GYD7HNj");
+        SessionChanger.getInstance().setUser("", "");
     }
     @SubscribeEvent
     public void key(InputEvent e) {
