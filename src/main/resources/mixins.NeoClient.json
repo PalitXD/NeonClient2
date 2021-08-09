@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "com.forge.NeoClient.Mixins",
+  "refmap": "mixins.NeoClient.refmap.json",
+  "mixins": [
+    "MixinMainMenu",
+    "MixinAbstractClientPlayer",
+    "MixinItemRenderer",
+    "MixinEntityRenderer",
+    "MixinPlayerControllerMP",
+    "SessionUtil"
+    ]
+}
