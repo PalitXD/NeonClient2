@@ -2,6 +2,7 @@ package com.forge.NeoClient;
 
 
 import com.forge.NeoClient.HudMods.HudRender;
+import com.forge.NeoClient.Managers.DiscordHandler;
 import com.forge.NeoClient.Managers.HudManager;
 import com.forge.NeoClient.Managers.ModuleManager;
 import com.forge.NeoClient.Managers.SettingsManager;
@@ -9,6 +10,9 @@ import com.forge.NeoClient.Mixins.SessionUtil;
 import com.forge.NeoClient.Mods.Module;
 import com.forge.NeoClient.Util.Helper;
 import com.forge.NeoClient.Util.SessionChanger;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -28,24 +32,24 @@ public class Main
     private HudRender hudRender;
     private HudManager hudManager;
     private ModuleManager moduleManager;
+    private DiscordHandler discordHandler;
     private static SettingsManager settingsManager = new SettingsManager();
     public static SettingsManager getSettingsManager(){return settingsManager;}
     private static CapeInstances capeInstances = new CapeInstances();
     public static CapeInstances getCapeInstances() { return capeInstances; }
-
+    public static FontRenderer prototype;
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
+        prototype = new FontRenderer(Minecraft.getMinecraft().gameSettings, new ResourceLocation("Prototype.ttf"), Minecraft.getMinecraft().getTextureManager(), true);
         MinecraftForge.EVENT_BUS.register(this);
         hudRender = new HudRender();
         hudManager = new HudManager();
         moduleManager = new ModuleManager();
         capeInstances = new CapeInstances();
         settingsManager = new SettingsManager();
-        MinecraftForge.EVENT_BUS.register(moduleManager);
-        MinecraftForge.EVENT_BUS.register(hudManager);
-        MinecraftForge.EVENT_BUS.register(hudRender);
+        discordHandler = new DiscordHandler();
         SessionChanger.getInstance().setUser("", "");
     }
     @SubscribeEvent

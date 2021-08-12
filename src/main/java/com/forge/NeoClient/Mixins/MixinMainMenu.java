@@ -22,6 +22,5 @@ public class MixinMainMenu {
         FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
         ScaledResolution sc = new ScaledResolution(Helper.getMC());
         fr.drawStringWithShadow("Neo Client", 6, 6, 0x92312323);
-        DrawUtil.drawCircle( 50, 50, Color.green.getRGB());
     }
 }

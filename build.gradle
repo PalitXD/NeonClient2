@@ -51,12 +51,41 @@ repositories {
 minecraft {
     version = "1.8.9-11.15.1.2318-1.8.9"
     runDir = "run"
+    coreMod = "com.forge.NeoClient.Mixins.MixinsLoader"
     mappings = "stable_20"
 }
 
 mixin {
     defaultObfuscationEnv searge
     add sourceSets.main, 'mixins.NeoClient.refmap.json'
+}
+shadowJar {
+    dependencies {
+        // mixin
+        include(dependency('org.spongepowered:mixin'))
+    }
+    exclude 'dummyThing'
+    exclude 'LICENSE.txt'
+    classifier = 'release'
+}
+jar {
+    manifest {
+        attributes(
+                'MixinConfigs': 'mixin.nordclient.json',
+                'tweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
+                'TweakOrder': 0,
+                'FMLCorePluginContainsFMLMod': 'true',
+                'FMLCorePlugin': 'io.ace.nordclient.mixin.NordMixinLoader',
+                'ForceLoadAsMod': 'true',
+                //'FMLAT': 'nordclient_at.cfg'
+        )
+    }
+}
+reobf {
+    shadowJar {
+        mappingType = 'SEARGE'
+        classpath = sourceSets.main.compileClasspath
+    }
 }
 dependencies {
 
@@ -72,7 +101,6 @@ dependencies {
     compile group: 'net.jodah', name: 'typetools', version: '0.5.0'
 
 }
-
 
 
 processResources {

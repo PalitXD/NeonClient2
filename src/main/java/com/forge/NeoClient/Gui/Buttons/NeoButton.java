@@ -1,5 +1,6 @@
 package com.forge.NeoClient.Gui.Buttons;
 
+import com.forge.NeoClient.Main;
 import com.forge.NeoClient.Util.DrawUtil;
 import com.forge.NeoClient.Util.MathUtil;
 import net.minecraft.client.Minecraft;
@@ -18,6 +19,6 @@ public class NeoButton extends GuiButton {
             FontRenderer fr = mc.fontRendererObj;
             this.hovered = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height + 10;
             DrawUtil.drawRoundedOutlineFloat(this.xPosition, this.yPosition, this.xPosition + MathUtil.getscalledposX(120), this.yPosition + MathUtil.getscalledposY(50), 4f, 5f, Color.pink.getRGB());
-
+            Main.prototype.drawString("COck", 43, 45, Color.green.getRGB());
     }
 }

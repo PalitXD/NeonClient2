@@ -14,9 +14,8 @@ public class ClickGui extends GuiScreen {
 
     @Override
     public void drawScreen(int mx, int my, float tick){
-        DrawUtil.drawRoundedOutlineFloat(MathUtil.getscalledposX(480), MathUtil.getscalledposY(270), MathUtil.getscalledposX(1440), MathUtil.getscalledposY(810), MathUtil.getscalledpos(40), 10f, 0x70000000);
-        DrawUtil.drawRoundedOutlineFloat(MathUtil.getscalledposX(470), MathUtil.getscalledposY(260), MathUtil.getscalledposX(1450), MathUtil.getscalledposY(820), MathUtil.getscalledpos(40), 10f, 0x77777777);
-        DrawUtil.DrawCircle(Color.green.getRGB());
+        DrawUtil.drawRoundedOutlineFloat(MathUtil.getscalledposX(480), MathUtil.getscalledposY(270), MathUtil.getscalledposX(1440), MathUtil.getscalledposY(810), MathUtil.getscalledpos(40), 5f, 0x70000000);
+        DrawUtil.drawRoundedOutlineFloat(MathUtil.getscalledposX(470), MathUtil.getscalledposY(260), MathUtil.getscalledposX(1450), MathUtil.getscalledposY(820), MathUtil.getscalledpos(40), 5f, 0x77777777);
     }
    public ScaledResolution sr = new ScaledResolution(Minecraft.getMinecraft());
     public void guiscreen(){
